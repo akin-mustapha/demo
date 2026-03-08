@@ -3,10 +3,10 @@
 echo "Migrating Repository"
 
 echo "Cloning Repository..."
-git clone https://github.com/akin-mustapha/demo_prefect_flow_consume_t212_api.git
+git clone https://github.com/akin-mustapha/demo_github_actions.git
 
 echo "Changing Directory..."
-cd demo_prefect_flow_consume_t212_api
+cd demo_github_actions
 
 echo "Removing git folder"
 rm -rf .git
