@@ -1,0 +1,4 @@
+id,block_id,floor_number,unit_number,number_of_bedrooms,number_of_bathrooms,square_feet
+
+1,1,1,101,2,1,850
+2,1,1,102,3,2,1200
