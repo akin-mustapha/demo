@@ -1,0 +1,40 @@
+{
+  "OVERWHELMED": {
+    "keywords": [
+      "stuck",
+      "heavy",
+      "overwhelm",
+      "tire",
+      "focus"
+    ],
+    "phrases": [
+      "too much",
+      "brain fried",
+      "can\u2019t cope"
+    ]
+  },
+  "SCATTERED": {
+    "keywords": [
+      "switch",
+      "jump",
+      "distract"
+    ],
+    "phrases": [
+      "nothing land",
+      "all over place",
+      "tired"
+    ]
+  },
+  "FOCUSED": {
+    "keywords": [
+      "clear",
+      "lock",
+      "flow",
+      "productive"
+    ],
+    "phrases": [
+      "locked in",
+      "in the zone"
+    ]
+  }
+}
