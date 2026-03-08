@@ -40,3 +40,4 @@ project/
 *.sbt
 .metals/
 .scala-build
+access_key.json
