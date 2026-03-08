@@ -70,3 +70,6 @@ __pycache__/
 *.sqlite3
 *.db
 *.egg-info/
+venv/**
+__pycache__/**
+*.log
