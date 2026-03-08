@@ -41,3 +41,10 @@ project/
 .metals/
 .scala-build
 access_key.json
+venv/
+.venv/
+*logs/
+*.log
+__pycache__/
+*.pyc
+*.db
