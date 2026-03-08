@@ -1,0 +1,33 @@
+name: Start
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run some task
+        run: |
+          echo "Running initial workflow"
+          # Simulate a task
+          exit 1  # Simulate failure (use exit 0 for success)
+        continue-on-error: true
+      - name: Save exit code
+        run: echo $? > exit_code.txt
+      - name: Upload exit code
+        uses: actions/upload-artifact@v4
+        with:
+          name: exit-code
+          path: exit_code.txt
+
+  # fail job
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Fail
+  #       run: exit 1

@@ -1,0 +1,32 @@
+name: End
+on:
+  workflow_run:
+    workflows: ["Start"]
+    branches:
+      - main
+      - master
+    types:
+          - completed
+
+jobs:
+  conditional-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Download exit code
+        uses: actions/download-artifact@v4
+        with:
+          name: exit-code
+      - name: Check exit code
+        id: check_exit_code
+        run: |
+          exit_code=$(cat ./exit_code/exit_code.txt)
+          echo "Exit code of initial workflow: $exit_code"
+          echo "::set-output name=exit_code::$exit_code"
+      - name: Run if initial workflow succeeded
+        if: steps.check_exit_code.outputs.exit_code == '0'
+        run: echo "Initial workflow succeeded, running this job"
+      - name: Run if initial workflow failed
+        if: steps.check_exit_code.outputs.exit_code != '0'
+        run: echo "Initial workflow failed, not running this job"
